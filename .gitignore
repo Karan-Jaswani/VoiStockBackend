@@ -1,0 +1,50 @@
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+**/mvnw
+**/mvnw.cmd
+
+# IntelliJ IDEA
+*.iml
+.idea/
+*.ipr
+*.iws
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build
+*.class
+*.jar
+*.war
+*.ear
+
+# Spring Boot dev configs
+*.env
+application-dev.properties
+application-prod.properties
+
+# Docker local build
+Dockerfile
+*.local
+docker-compose.override.yml
+
+# Optional: exclude test output
+**/test-output/
+**/build/
+
+# Misc
+*.swp
+*.swo

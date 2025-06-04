@@ -1,0 +1,48 @@
+Api List:-
+
+i.   Register and get otp:- http://localhost:8080/api/auth/register
+Body:-
+{
+  "username": "Ismail",
+  "password": "password@123",
+  "email": "ismailmansury9737@gmail.com",
+  "role": "USER"
+}
+positive response:- status code 200 User registered. Check your email for OTP.
+negative response:- status 400
+
+
+
+ii. Verify Otp(If Otp correct and not expired Then User will be created successfully):- http://localhost:8080/api/auth/verify-otp
+Body:-
+{
+  "email": "ismailmansury9737@gmail.com",
+  "otp":123456
+}
+positive response:- status 200{
+    "success": true,
+    "message": "Email verified!"
+}
+negative response:- status 400, 500{
+    "success": false,
+    "message": "Any message"
+}
+
+
+
+iii. Login(To get Jwt Token):- http://localhost:8080/api/auth/login
+{
+    "email": "ismailmansury9737@gmail.com",
+    "password": "password123"
+}
+
+positive response:- status 200
+{
+    "success": true,
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWJqZWN0IjoiaXNtYWlsbWFuc3VyeTk3MzdAZ21haWwuY29tIiwiY3JlYXRlZCI6MTczNTQ1NTY2MzUwOSwiZXhwaXJhdGlvbiI6MTczNTU0MjA2MzUwOSwic3ViIjoiaXNtYWlsbWFuc3VyeTk3MzdAZ21haWwuY29tIiwiaWF0IjoxNzM1NDU1NjYzLCJleHAiOjE3MzU1NDIwNjN9.-JcRBRgbvCsQIp-SIyRJGnLbhpc6SHKMz2o66Ft_XOg"
+}
+negative response:- status 401
+{
+    "success": false,
+    "message": "Invalid email or password."
+}
