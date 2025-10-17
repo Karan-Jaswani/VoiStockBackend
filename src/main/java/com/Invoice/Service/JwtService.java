@@ -12,9 +12,11 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-    private String SECRET_KEY="ismailkaranhamzahabcd12349999zahabcd12349999d12349999";
+    @Value("${JWT_SECRET}")
+    private String SECRET_KEY;
 
-    private long EXPIRATION_TIME=86400000; // Time in milliseconds
+    @Value("${JWT_EXPIRATION}")
+    private long EXPIRATION_TIME; // Time in milliseconds
 
     // Extract the username from token
     public String getUsernameFromToken(String token) {
