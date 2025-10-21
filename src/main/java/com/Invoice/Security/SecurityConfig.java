@@ -26,8 +26,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebSecurity
 public class SecurityConfig implements WebMvcConfigurer {
 
-	private CustomUserDetailsService userDetailsService;
-	private JwtService jwtService;
+	private final CustomUserDetailsService userDetailsService;
+	private final JwtService jwtService;
 
 	@Value("${frontend.api.url}")
 	private String frontendUrl;

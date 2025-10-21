@@ -10,8 +10,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomUserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
 
-	@Autowired
-	private UserRepository userRepository;
+    private final UserRepository userRepository;
+
+	CustomUserDetailsService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
 	public UserDetails loadUserByEmail(String email) throws UsernameNotFoundException {
 		return loadUserByUsername(email); // Just aliasing the method
